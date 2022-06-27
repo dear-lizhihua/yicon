@@ -5,6 +5,7 @@
   "private": true,
   "main": "bin/server.js",
   "scripts": {
+    "debug": "NODE_PATH=./src NODE_ENV=production PORT=3000 node ./bin/server.js",
     "lint": "eslint --ext .js,.jsx src",
     "start:dev": "better-npm-run start:dev",
     "start:prd": "better-npm-run start:prd",
@@ -188,7 +189,7 @@
     "koa-webpack-dev-middleware": "^1.2.1",
     "koa-webpack-hot-middleware": "^1.0.3",
     "mocha": "^2.5.3",
-    "node-sass": "^3.8.0",
+    "node-sass": "^7.0.0",
     "nodemon": "^1.9.2",
     "phantomjs-prebuilt": "^2.1.7",
     "postcss-loader": "0.9.1",
