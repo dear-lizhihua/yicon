@@ -57,7 +57,7 @@ export default store => {
       {/* 首页路由 */}
       <IndexRoute component={Home} />
 
-      {/* Routes */}
+      {/* 无认证，可访问 */}
       <Route path="repositories/:id" component={Repository} />
       <Route path="projects/:id" component={PublicProject} />
       <Route path="transition/:type" component={Transition} /> {/* 跳转页面 */}
@@ -66,7 +66,7 @@ export default store => {
       <Route path="ldapauth" component={LdapAuth} /> {/* LDAP登录 */}
       <Route path="statistic" component={Statistic} /> {/* 图标统计 */}
 
-      {/* 登录用户路由 */}
+      {/* 认证后，可访问 */}
       <Route onEnter={requireLogin}>
         <Route path="upload(/repository/:repoId)" component={Upload} /> {/* 上传图标 */}
         <Route path="workbench(/repository/:repoId)" component={Workbench} /> {/* 工作台 */}
@@ -84,7 +84,7 @@ export default store => {
           <Route path="icons" component={Uploaded} />
         </Route>
 
-        {/* 库管用户路由 */}
+        {/* 库管用户 */}
         <Route onEnter={requireOwner}>
           {/* <Route path="replacement" component={Replacement} /> */} {/* 替换页面 */}
           {/* <Route path="replacement/icon/:fromId...:toId" component={ReplWorkbench} /> */}
@@ -93,7 +93,7 @@ export default store => {
           <Route path="repositories/:id/logs" component={Log} /> {/* 大库日志 */}
         </Route>
 
-        {/* 超管用户路由 */}
+        {/* 超管用户 */}
         <Route path="admin" onEnter={requireAdmin}>
           <Route path="authority/:type" component={Authority} /> {/* 权限设置 */}
           <Route path="code" component={DisabledCode} /> {/* 系统占用编码管理 */}
@@ -102,7 +102,6 @@ export default store => {
         </Route>
       </Route>
 
-      {/* Catch all route */}
       <Route path="*" component={NoMatch} />
     </Route>
   );
