@@ -4,6 +4,7 @@ import {
   AUDIT_ICONS,
   UPDATE_AUDIT_ICONS,
   SELECT_AUDIT_ICON,
+  PASSED_AUDIT_ICON,
 } from '../constants/actionTypes';
 const fetch = isonFetch.create({ baseURL: '/api' });
 
@@ -32,5 +33,12 @@ export function selectIcon(index) {
   return {
     type: SELECT_AUDIT_ICON,
     payload: index,
+  };
+}
+
+export function passedIcon(icons) {
+  return {
+    type: PASSED_AUDIT_ICON,
+    payload: icons,
   };
 }

@@ -2,6 +2,7 @@ import {
   FETCH_AUDIT_ICONS,
   UPDATE_AUDIT_ICONS,
   SELECT_AUDIT_ICON,
+  PASSED_AUDIT_ICON,
 } from '../../constants/actionTypes';
 
 const initialState = {
@@ -27,6 +28,12 @@ export default (state = initialState, action) => {
       return {
         ...state,
         selcIndex: action.payload,
+      };
+    }
+    case PASSED_AUDIT_ICON: {
+      return {
+        ...state,
+        icons: action.payload,
       };
     }
     default:

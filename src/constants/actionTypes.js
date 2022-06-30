@@ -114,6 +114,7 @@ export const FETCH_AUDIT_ICONS = 'FETCH_AUDIT_ICONS';
 export const AUDIT_ICONS = 'AUDIT_ICONS';
 export const UPDATE_AUDIT_ICONS = 'UPDATE_AUDIT_ICONS';
 export const SELECT_AUDIT_ICON = 'SELECT_AUDIT_ICON';
+export const PASSED_AUDIT_ICON = 'PASSED_AUDIT_ICON';
 
 // repWorkbench
 export const FETCH_CURR_ICON = 'FETCH_CURR_ICON';

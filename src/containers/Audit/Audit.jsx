@@ -9,6 +9,7 @@ import {
   updateAuditIcons,
   auditIcons,
   selectIcon,
+  passedIcon,
 } from '../../actions/audit.js';
 import IconsSetting from '../../components/common/IconsSetting/IconsSetting.jsx';
 import dialog from '../../components/common/Dialog/Confirm.jsx';
@@ -22,6 +23,7 @@ const propTypes = {
   updateAuditIcons: PropTypes.func,
   auditIcons: PropTypes.func,
   selectIcon: PropTypes.func,
+  passedIcon: PropTypes.func,
   push: PropTypes.func,
 };
 @connect(
@@ -34,6 +36,7 @@ const propTypes = {
     updateAuditIcons,
     auditIcons,
     selectIcon,
+    passedIcon,
     push,
   }
 )
@@ -46,6 +49,7 @@ export default class Audit extends Component {
     updateAuditIcons: PropTypes.func,
     auditIcons: PropTypes.func,
     selectIcon: PropTypes.func,
+    passedIcon: PropTypes.func,
     router: PropTypes.object,
     route: PropTypes.object,
   }
@@ -57,6 +61,13 @@ export default class Audit extends Component {
       const { icons } = this.props;
       if (icons.length) {
         this.props.selectIcon(0);
+        const newIcons = icons.map((icon) => {
+          const newIcon = {...icon}
+          newIcon.passed = true
+          return newIcon
+        })
+        console.log('aaa',newIcons)
+        this.props.passedIcon(newIcons);
       } else {
         this.props.push('/transition/audit-icon');
       }
@@ -185,6 +196,7 @@ export default class Audit extends Component {
       return null;
     }
     const auditedNum = this.calcAuditDone().auditedIcons.length;
+    console.log(789, icon.passed)
     return (
       <div className={'yicon-main yicon-upload'}>
         <div className={'yicon-audit-container'}>
