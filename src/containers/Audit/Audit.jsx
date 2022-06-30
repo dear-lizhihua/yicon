@@ -66,7 +66,6 @@ export default class Audit extends Component {
           newIcon.passed = true
           return newIcon
         })
-        console.log('aaa',newIcons)
         this.props.passedIcon(newIcons);
       } else {
         this.props.push('/transition/audit-icon');
@@ -196,7 +195,6 @@ export default class Audit extends Component {
       return null;
     }
     const auditedNum = this.calcAuditDone().auditedIcons.length;
-    console.log(789, icon.passed)
     return (
       <div className={'yicon-main yicon-upload'}>
         <div className={'yicon-audit-container'}>

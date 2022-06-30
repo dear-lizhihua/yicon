@@ -64,6 +64,25 @@ export default class Workbench extends Component {
       const { icons } = this.props;
       if (icons.length) {
         this.props.selectEdit(0);
+        const newIcons = icons.map((icon) => {
+          const newIcon = {...icon}
+          newIcon.isAdjusted = true
+          return newIcon
+        })
+        Promise.all(newIcons.map((icon) => {
+          return new Promise((resolve, reject) => {
+            const { svg } = icon.cache || {};
+            axios
+              .post('/api/user/icons/svg', { svg })
+              .then(data => {
+                const path = data && data.data && data.data.data;
+                icon._path = icon.isAdjusted && path ? path : icon.path;
+                resolve(icon)
+              }).catch(error => reject(error));
+          })
+        })).then((adjustedIcons) => {
+          this.props.adjustIcon(adjustedIcons);
+        });
       } else {
         this.props.push('/transition/upload-icon');
       }
