@@ -154,12 +154,12 @@ export default class Transition extends Component {
         <div className="no-auth-nores"></div>
         <div className="no-auth-tips">
           <p>没有待上传的图标</p>
-          <p>{this.state.second} 秒之后跳转至图标上传页</p>
+          <p>{this.state.second} 秒之后跳转至图标审核页</p>
         </div>
         <p>
           <button
             className="no-auth-login"
-            onClick={() => this.immedBackToPage('/upload')}
+            onClick={() => this.immedBackToPage('/audit')}
           >
             点击跳转
           </button>
