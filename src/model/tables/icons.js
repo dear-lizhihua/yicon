@@ -9,6 +9,7 @@ export default seq.define('icons', {
   },
   fontClass: {
     type: Seq.STRING,
+    defaultValue: '-o',
     comment: '图标类名',
   },
   tags: {
