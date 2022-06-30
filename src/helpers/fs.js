@@ -3,7 +3,7 @@ import Q from 'q';
 import fs from 'fs';
 import path from 'path';
 
-import fontBuilder from 'iconfont-builder';
+import fontBuilder from 'iconfont-builder-lizhihua';
 import SVGO from 'svgo';
 import { render } from 'svgexport';
 import svgBuilder from './svgTemplate';

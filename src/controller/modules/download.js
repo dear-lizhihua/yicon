@@ -1,7 +1,7 @@
 import zip from 'zip-dir';
 import Q from 'q';
 import invariant from 'invariant';
-import fontBuilder from 'iconfont-builder';
+import fontBuilder from 'iconfont-builder-lizhihua';
 import fs from 'fs';
 
 import { iconStatus } from '../../constants/utils';

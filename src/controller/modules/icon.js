@@ -1,4 +1,4 @@
-import fontBuilder from 'iconfont-builder';
+import fontBuilder from 'iconfont-builder-lizhihua';
 import invariant from 'invariant';
 
 // import py from 'pinyin';
