@@ -14,7 +14,7 @@ export default class Transition extends Component {
   }
 
   state = {
-    second: 5,
+    second: 2,
   }
 
   componentDidMount() {
@@ -38,7 +38,7 @@ export default class Transition extends Component {
         break;
       }
       case 'upload-icon': {
-        this.backToPage('/upload');
+        this.backToPage('/auditing');
         break;
       }
       case 'ldapauth-failed': {
