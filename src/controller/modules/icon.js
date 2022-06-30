@@ -109,7 +109,7 @@ const replaceDefs = (buffer, originalname) => {
     if (str.indexOf('<use ') >= 0) {
       const arr = str.split('\n');
       let line = 0;
-      
+
       arr.forEach((s, i) => {
         if (s.indexOf('<defs>') >= 0) {
           line = i;
@@ -118,7 +118,7 @@ const replaceDefs = (buffer, originalname) => {
       });
       invariant(
         false,
-        `暂不支持<defs>, 请重新编辑. 
+        `暂不支持<defs>, 请重新编辑.
         (文件: ${originalname}  行: ${line + 1})`
       );
     } else {
@@ -167,7 +167,7 @@ export function* uploadIcons(next) {
   const data = icons.map(icon => {
     invariant(
       ICON_NAME.reg.test(icon.name),
-      '文件名称长度为 1-20，支持中文、英文、数字、连字符和下划线等，不能含有其他非法字符，请修改后重新上传'
+      '文件名称长度为 1-200，支持中文、英文、数字、连字符和下划线等，不能含有其他非法字符，请修改后重新上传'
     );
     return {
       name: icon.name,

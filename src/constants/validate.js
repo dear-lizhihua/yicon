@@ -1,6 +1,6 @@
 export const ICON_NAME = {
-  reg: /^[\w\u4E00-\u9FFF\[\]\- ]{1,20}$/,
-  message: '图标名称长度为 1-20，不能有非法字符',
+  reg: /^[\w\u4E00-\u9FFF\[\]\- ]{1,200}$/,
+  message: '图标名称长度为 1-200，不能有非法字符',
 };
 export const ICON_TAG = {
   reg: /^[\w\u4E00-\u9FFF,\[\]\-]{1,30}$/i,
