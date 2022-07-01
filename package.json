@@ -155,9 +155,6 @@
   "pre-commit": [
     "lint"
   ],
-  "nodeSassConfig": {
-    "binarySite": "https://npm.taobao.org/mirrors/node-sass/"
-  },
   "devDependencies": {
     "autoprefixer": "^6.3.6",
     "babel": "^6.5.2",
