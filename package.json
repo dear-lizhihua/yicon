@@ -5,7 +5,8 @@
   "private": true,
   "main": "bin/server.js",
   "scripts": {
-    "debug": "NODE_PATH=./src NODE_ENV=production PORT=3000 node ./bin/server.js",
+    "debug": "NODE_PATH=./src NODE_ENV=development PORT=3000 node ./bin/server.js",
+    "prod": "NODE_PATH=./src NODE_ENV=production PORT=3000 node ./bin/server.js",
     "lint": "eslint --ext .js,.jsx src",
     "start:dev": "better-npm-run start:dev",
     "start:prd": "better-npm-run start:prd",
@@ -113,7 +114,7 @@
     "form-data": "^2.1.2",
     "graphite": "0.0.6",
     "history": "^2.1.1",
-    "iconfont-builder-lizhihua": "^2.3.2",
+    "iconfont-builder": "^2.3.2",
     "invariant": "^2.2.1",
     "isom-fetch": "^1.1.1",
     "koa": "^1.2.0",
